@@ -93,6 +93,7 @@ function sendGyro(){
   
   function onClick() {
     ip = document.getElementById("IP").value
+    document.getElementById("o").innerHTML = ip
     if (no_timer){
         no_timer = false
         setInterval(sendGyro, 5000)
