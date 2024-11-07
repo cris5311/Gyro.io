@@ -1,4 +1,5 @@
 <html>
+<!-- README -->
 <head>
     <style>
         .button {
@@ -54,9 +55,6 @@ function handleOrientation(event) {
     if (event.alpha === null) {
       return
     }
-    if (showCoords){
-      console.log(event.alpha, event.beta, event.gamma)
-    }
     const alpha = event.alpha;
     const beta = event.beta;
     const gamma = event.gamma;
@@ -82,6 +80,7 @@ function handleOrientation(event) {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://"+ip+":8080/trans/target");
     xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+    const body = JSON.stringify(data);
     xhr.send(body);
 }
 function sendGyro(){
